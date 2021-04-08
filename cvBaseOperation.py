@@ -23,6 +23,7 @@ def imageBaseTest():
 def cv_show(img, name="show"):
     # 图像的显示，也可也i创建多个窗口
     cv2.imshow(name, img)
+    cv2.moveWindow(name, 40, 50)
     # 等待时间，毫秒级， 0表示任意健终止
     cv2.waitKey(0)
     cv2.destroyAllWindows()
@@ -64,7 +65,57 @@ def getSplitChannels():
     cv_show(cur_image, "B")
 
 def borderFill():
-    pass
+    """
+    BORDER_REPLICATE: 复制法，也就是复制最边缘像素
+    BORDER_REFLECT: 反射法，对感兴趣的图像中的像素在两边进行复制，例如：fedcba|abcdefgh|hgfedcb
+    BORDER_REFLECT_101: 反射法，也就是以最边缘像素为轴，对称，gfedcb|abcdefgh|gfedcba
+    BORDER_WRAP: 外包装法 cdefgh|abcdefgh|abcdefg
+    BORDER_CONSTANT: 常量法，常数值填充
+    :return:
+    """
+    img = cv2.imread("./images/cat.jpg")
+    top_size, bottom_size, left_size, right_size = (50, 50, 50, 50)
+    replicate = cv2.copyMakeBorder(img, top_size, bottom_size, left_size, right_size, borderType=cv2.BORDER_REPLICATE)
+    reflect = cv2.copyMakeBorder(img, top_size, bottom_size, left_size, right_size, borderType=cv2.BORDER_REFLECT)
+    reflect101 = cv2.copyMakeBorder(img, top_size, bottom_size, left_size, right_size, borderType=cv2.BORDER_REFLECT_101)
+    wrap = cv2.copyMakeBorder(img, top_size, bottom_size, left_size, right_size, borderType=cv2.BORDER_WRAP)
+    constant = cv2.copyMakeBorder(img, top_size, bottom_size, left_size, right_size, borderType=cv2.BORDER_CONSTANT, value=0)
+
+    plt.subplot(231), plt.imshow(img, "gray"), plt.title("ORIGINAL")
+    plt.subplot(232), plt.imshow(replicate, "gray"), plt.title("REPLICATE")
+    plt.subplot(233), plt.imshow(reflect, "gray"), plt.title("REFLECT")
+    plt.subplot(234), plt.imshow(reflect101, "gray"), plt.title("REFLECT_101")
+    plt.subplot(235), plt.imshow(wrap, "gray"), plt.title("WRAP")
+    plt.subplot(236), plt.imshow(constant, "gray"), plt.title("CONSTANT")
+
+    plt.show()
+
+def valueCalculate():
+    img_dog = cv2.imread("./images/dog.jpg")
+    img_cat = cv2.imread("./images/cat.jpg")
+
+    # 每个像素点的每个通道都加10
+    # print(img_cat[:2, :1, :1])  # 只显示前2行
+    # print("="*5)
+    img_cat2 = img_cat + 10
+    # print(img_cat2[:2, :1, :1]) # 只显示前2行
+
+    # shape 不同，不能直接相加
+    # 每个像素对应的通道的值相加，当超过255时，对256取余数
+    imgAdd = img_cat + img_cat2
+    # print(imgAdd[:2, :1, :1])
+    cv_add = cv2.add(img_cat, img_cat2)
+    # print(cv_add[:2, :1, :1])
+    # 猫和狗的图片融合
+    # 先对dog进行resize
+    print(img_dog.shape)
+    img_dog = cv2.resize(img_dog, (500, 414)) # resize的第一种方式
+    # cv2.resize(img_dog, (0, 0), fx=1, fy=3) # 表示沿着y轴方向拉升3倍
+    print(img_dog.shape)
+    print(img_cat.shape)
+    res = cv2.addWeighted(img_cat, 0.4, img_dog, 0.6, 0)
+    plt.imshow(res)
+    # cv_show(res)
 
 def videoBaseTest():
     # cv2.VideoCapture可以捕获摄像头，用数字来控制不同的设备，例如0，1
@@ -102,6 +153,7 @@ if __name__=="__main__":
     # videoBaseTest()
     # getROICV()
     # getSplitChannels()
-    borderFill()
+    # borderFill()
+    valueCalculate()
     pass
 
