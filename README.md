@@ -8,7 +8,7 @@ openCV安装：<br>
     pip install \--user -i http://pypi.douban.com/simple \--trusted-host pypi.douban.com opencv-python\==3.4.1.15<br>
     测试安装成功<br>
     import cv2<br>
-    cv2.__version__<br>
+    cv2.\_\_version\_\_<br>
     输出:<br>
     3.4.1  就对了<br>
 2. 安装额外的扩展 opencv-contrib-python<br>
