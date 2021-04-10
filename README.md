@@ -1,5 +1,6 @@
 # openCV_python
 learn about openCV in python<br>
+##环境安装
 python 环境： python\==3.6.2， opecv\==3.4.1.15<br>
 openCV安装：<br>
 1. 安装opencv-python<br>
@@ -16,5 +17,7 @@ openCV安装：<br>
     安装版本必须与1中的一样，命令:<br>
     pip install --user opencv-contrib-python==3.4.1.15 # 速度慢就换源<br>
     pip install --user -i http://pypi.douban.com/simple --trusted-host pypi.douban.com opencv-contrib-python==3.4.1.15<br>
+或者在直接下载openCV的包来安装：https://www.lfd.uci.edu/~gohlke/pythonlibs/<br>
+##内容说明<br>
 
 
