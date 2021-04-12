@@ -20,7 +20,7 @@ openCV安装：<br>
 或者在直接下载openCV的包来安装：https://www.lfd.uci.edu/~gohlke/pythonlibs/<br>
 
 
-内容说明:<br>
+内容说明<br>
 cvBaseOperation.py: 关于图片的基本操作：图片和视频的打开，显示和保存，以及切片ROI，数值计算，通道分离，添加边界等操作，还有多图融合；<br>
     thresholdAndSmothOperation.py: 图像二值化，平滑处理（低通滤波）：均值滤波，方框滤波，高斯滤波和终止滤波；<br>
     morphologyOperation.py: 形态学操作，包括腐蚀，膨胀，开运算，闭运算，计算梯度，顶帽和黑帽<br>
@@ -34,4 +34,4 @@ cvBaseOperation.py: 关于图片的基本操作：图片和视频的打开，显
 
 项目说明:<br>
     ocr_template_match：用模板匹配的方法，实现对信用卡数字的识别；先用形态学的方法实现数字块的分割，再用宽高比 和 宽高像素等方法，得到数字块，最后对每个块分割出每个数字块，跟模板的10个数字块进行匹配；<br>
-
+    ocr_doc_scan_recognition: 用图像透视的方法，矫正文本图片，然后用tesseract识别里面的内容；<br>
