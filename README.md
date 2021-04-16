@@ -37,3 +37,5 @@ cvBaseOperation.py: 关于图片的基本操作：图片和视频的打开，显
     ocr_doc_scan_recognition: 用图像透视的方法，矫正文本图片，然后用tesseract识别里面的内容；<br>
     harris_and_sift: 介绍了harris和sift算法的用法，sift包括特征点、特征向量和向量匹配；用来做比较相似度和插入；<br>
     imageJoint: 将有重复的两张图片进行拼接，做法是找到两张图片的特征向量，然后计算出一张图的变换矩阵M，变换一张图后，将另一张图片插入即可；<br>
+    parkingSpaceRecognition: 室外停车厂，车位检测，首先要根据获取停车厂的大致位置，然后用opencv的方法切割出每一列的车位，然后切出每一列中每一个车位，最后用keras分类出的模型来预测，车位为空还是有车；<br>
+
