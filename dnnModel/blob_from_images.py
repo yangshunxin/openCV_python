@@ -1,5 +1,5 @@
 # 导入工具包
-import utils_paths
+from dnnModel import utils_paths
 import numpy as np
 import cv2
 

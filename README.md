@@ -41,3 +41,6 @@ cvBaseOperation.py: 关于图片的基本操作：图片和视频的打开，显
     anchorSheetProj: 答题卡分数批改，首先做透视变换，将试卷做平整，然后将检测出所有的圆圈，之后排序，得到每一行的圆圈，计算圆圈中白点的个数，来判断答案，并跟已知的答案对比；<br>
     backgroundModeling: 用混合高斯模型实现背景建模，找到途中的运动物体，并跟踪；<br>
     opticalFlowEstimation: 光流估计是计算特征点的瞬时速度；<br>
+    dnnModel: 讲的是openCVdnn模块如何加载caffe训练的检测模型；<br>
+    multiObjectTracking: 讲的是openCV中传统的多目标跟踪算法，用的多的是kcf算法，但都不完美；<br>
+    multiObjectTracking_dlib：使用dlib和caffe模型实现目标的追踪， caffe来检测物体，dlib来追踪显示；<br>
