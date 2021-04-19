@@ -21,7 +21,7 @@ openCV安装：<br>
 
 
 内容说明<br>
-cvBaseOperation.py: 关于图片的基本操作：图片和视频的打开，显示和保存，以及切片ROI，数值计算，通道分离，添加边界等操作，还有多图融合；<br>
+    cvBaseOperation.py: 关于图片的基本操作：图片和视频的打开，显示和保存，以及切片ROI，数值计算，通道分离，添加边界等操作，还有多图融合；<br>
     thresholdAndSmothOperation.py: 图像二值化，平滑处理（低通滤波）：均值滤波，方框滤波，高斯滤波和终止滤波；<br>
     morphologyOperation.py: 形态学操作，包括腐蚀，膨胀，开运算，闭运算，计算梯度，顶帽和黑帽<br>
     gradientCalcOperation.py: 梯度计算，包括sobel算子，scharr算子，拉普拉斯算子<br>
