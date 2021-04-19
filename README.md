@@ -44,3 +44,4 @@ openCV安装：<br>
     dnnModel: 讲的是openCVdnn模块如何加载caffe训练的检测模型；<br>
     multiObjectTracking: 讲的是openCV中传统的多目标跟踪算法，用的多的是kcf算法，但都不完美；<br>
     multiObjectTracking_dlib：使用dlib和caffe模型实现目标的追踪， caffe来检测物体，dlib来追踪显示；<br>
+    blinkDetection: 眨眼检测，采用dlib的模型检测人脸的68个关键点，得到眼睛的关键点，计算眼睛的宽高比，超过一定的阈值（有相关论文）就算眨眼了；<br>
